@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            RandInt Game
+        </title>
+    </head>
+    <body>
+        <form>
+            <center>
+                <h1>Random Integer Game</h1>
+                <textarea rows="10" cols="30" id="Sub1"></textarea>
+                <textarea rows="10" cols="30" id="Sub2"></textarea>
+                <p>Points of A: <span id="point1"></span></p>
+                <p>Points of B: <span id="point2"></span></p>
+                <p><span id="Display"></span></p>
+                <p id="A"></p>
+                <br><br><input type="button" id="click" onclick="sayHello()" onclick="hello()" value="Submit">
+            </center>
+        </form>
+        <script type="text/Javascript">
+            var Display="";
+            var sum1=0;
+            var sum2=0;
+            var point1="";
+            var point2="";
+            function sayHello()
+            {               
+                point1=document.getElementById("Sub1").innerHTML=Math.floor(Math.random() * 10) + 1;
+                point2=document.getElementById("Sub2").innerHTML=Math.floor(Math.random() * 10) + 1;
+                if(point1==point2)
+                {
+                    document.getElementById("Display").innerHTML="Game over!";
+                    document.getElementById("click").disabled=true;
+                }
+                else
+                {
+                    sum1=sum1+point1;
+                    sum2=sum2+point2;
+                    document.getElementById("point1").innerHTML=sum1;
+                    document.getElementById("point2").innerHTML=sum2;
+                }
+                if(click.disabled==true)
+                {
+                    if(sum1>sum2)
+                    {
+                        document.getElementById("A").innerHTML="A wins!";
+                    }
+                    else if(sum2>sum1)
+                    {
+                        document.getElementById("A").innerHTML="B wins!";
+                    }
+                    else
+                    {
+                        document.getElementById("A").innerHTML="Draw!";
+                    }
+                }
+            }
+            
+        </script>
+    </body>
+</html>
